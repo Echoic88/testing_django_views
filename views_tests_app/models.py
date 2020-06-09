@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 
+
 # Create your models here.
 class SuperHero(models.Model):
     """
@@ -15,4 +16,7 @@ class SuperHero(models.Model):
 
     def clean(self):
         if len(self.name) > 30 or len(self.secret_identity) > 30:
-            raise ValidationError("31 characters is the maximum length", code="max_lengh_breached")
+            raise ValidationError(
+                "31 characters is the maximum length",
+                code="max_length_breached"
+            )

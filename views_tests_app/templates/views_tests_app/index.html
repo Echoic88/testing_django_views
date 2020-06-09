@@ -6,4 +6,17 @@
         <h1>Page 1</h1>
     </div>
 </div>
+<div class="row">
+    <div class="col">
+        <h2>Superhero Form</h2>
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+        <form action="{% url 'views_tests_app:index' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
