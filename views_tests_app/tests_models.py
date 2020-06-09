@@ -33,3 +33,4 @@ class TestSuperHeroModel(TestCase):
         self.assertIsInstance(test_hero, SuperHero)
         test_retrieve = SuperHero.objects.get(name="Wolverine")
         self.assertIs(test_retrieve.first_appearance, None)
+        

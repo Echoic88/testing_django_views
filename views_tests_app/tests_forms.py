@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .models import SuperHero
 from .forms import SuperHeroForm
+import datetime
 
 # Create your tests here.
 class TestSuperHeroForm(TestCase):
@@ -21,4 +22,4 @@ class TestSuperHeroForm(TestCase):
         self.assertIsInstance(test_hero, SuperHero)
         self.assertEqual(test_hero.name, "Wolverine")
         self.assertEqual(test_hero.secret_identity, "James Howlett")
-        self.assertEqual(test_hero.first_appearance, "1974-11-01")
+        self.assertEqual(test_hero.first_appearance, datetime.date(1974,11,1))
